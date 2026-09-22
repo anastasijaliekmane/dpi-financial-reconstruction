@@ -89,7 +89,7 @@ h1 { margin: 9px 0 12px; font-size: clamp(2.25rem, 5vw, 5.4rem); line-height: .9
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); }
 .data-table { width: 100%; border-collapse: collapse; min-width: 900px; }
-.data-table th { position: sticky; top: 63px; background: #142126; color: #aebdc0; text-align: left; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+.data-table th { background: #142126; color: #aebdc0; text-align: left; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
 .data-table th, .data-table td { padding: 12px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .data-table tbody tr:hover { background: rgba(87,214,199,.04); }
 .decision-id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--teal); font-weight: 800; }

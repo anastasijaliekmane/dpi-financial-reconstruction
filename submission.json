@@ -1455,16 +1455,22 @@
       "confidence": "high",
       "aiProposal": "Reject the management P&L and adopt the reconciled EUR 65,000 result.",
       "independentChallenge": "Independent review traced management's EUR 312,000 claim to premature revenue, loan income, omitted expenses and owner-spend misclassification.",
-      "studentReasoning": "The management P&L is contradicted by the bank, contracts and third-party evidence: it includes EUR 90,000 of undelivered-event revenue and EUR 50,000 of borrowing as income and omits supported costs and provisions. Using the reconciled accounts reduces reported profit and equity by EUR 247,000 versus the EUR 312,000 claim; the approval decision itself does not move cash, assets or liabilities.",
+      "studentReasoning": "The management P&L is contradicted by the bank, contracts and third-party evidence: it includes EUR 90,000 of undelivered-event revenue and EUR 50,000 of borrowing as income and omits supported costs and provisions. The EUR 247,000 is only the comparison between management's EUR 312,000 claim and the reconciled EUR 65,000 profit. It is not an additional accounting entry, and the approval decision itself does not move profit, cash, assets, liabilities or equity.",
       "statementEffect": {
-        "profit": -247000,
+        "profit": 0,
         "cash": 0,
         "assets": 0,
         "liabilities": 0,
-        "equity": -247000
+        "equity": 0
       },
       "changedFromAI": false,
-      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
+      "statementEffectBasis": "Board approval has no additional statement effect. The EUR 247,000 is a comparison of EUR 312,000 management profit with EUR 65,000 corrected profit, not a journal entry.",
+      "comparisonToManagementClaim": {
+        "managementProfit": 312000,
+        "correctedProfit": 65000,
+        "difference": 247000,
+        "isAccountingEntry": false
+      }
     },
     {
       "id": "D092",
@@ -1579,16 +1585,22 @@
       "confidence": "high",
       "aiProposal": "Use corrected EUR 65,000 profit, subject to final board approval and uncertainty disclosures.",
       "independentChallenge": "Independent review independently reconstructed the statements and confirmed the management number is unsupported.",
-      "studentReasoning": "The earn-out must use the evidence-based EUR 65,000 provisional corrected profit rather than management's EUR 312,000 claim. The EUR 247,000 difference is supported by reversing premature revenue and loan income and recognizing omitted expenses and provisions; the valuation choice changes the profit and equity basis by EUR 247,000 but does not itself post cash, asset or liability entries.",
+      "studentReasoning": "The earn-out must use the evidence-based EUR 65,000 provisional corrected profit rather than management's EUR 312,000 claim. The EUR 247,000 is only the comparison between those two profit figures. It is not an additional accounting entry, and choosing the corrected figure for valuation does not itself move profit, cash, assets, liabilities or equity.",
       "statementEffect": {
-        "profit": -247000,
+        "profit": 0,
         "cash": 0,
         "assets": 0,
         "liabilities": 0,
-        "equity": -247000
+        "equity": 0
       },
       "changedFromAI": false,
-      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
+      "statementEffectBasis": "The earn-out choice has no additional statement effect. The EUR 247,000 is a comparison of EUR 312,000 management profit with EUR 65,000 corrected profit, not a journal entry.",
+      "comparisonToManagementClaim": {
+        "managementProfit": 312000,
+        "correctedProfit": 65000,
+        "difference": 247000,
+        "isAccountingEntry": false
+      }
     }
   ],
   "schedules": {
@@ -1823,8 +1835,8 @@
     ]
   },
   "certification": {
-    "status": "AI-assisted reconstruction prepared for student review",
-    "preparedAt": "2026-09-22",
-    "note": "The student remains responsible for understanding and certifying the submission before the individual verification."
+    "status": "Revised AI-assisted reconstruction awaiting student personal confirmation",
+    "preparedAt": "2026-09-25",
+    "note": "Anastasija Liekmane has not yet personally confirmed the final figures and judgments. The student remains responsible for reviewing and certifying the submission before individual verification."
   }
 }

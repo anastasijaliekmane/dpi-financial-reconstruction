@@ -17,6 +17,15 @@ const labelize = (value) => String(value)
 
 const amount = (value) => typeof value === "number" ? money.format(value) : esc(value);
 const signed = (value) => `<span class="${value < 0 ? "negative" : "positive"}">${money.format(value)}</span>`;
+const effectLabels = { profit: "Profit", cash: "Cash", assets: "Total assets", liabilities: "Liabilities", equity: "Equity" };
+
+function statementEffect(effect) {
+  return `<div class="effect-grid">${Object.entries(effectLabels).map(([key, label]) => {
+    const value = effect[key];
+    const tone = value > 0 ? "positive" : value < 0 ? "negative" : "neutral";
+    return `<div><small>${label}</small><strong class="${tone}">${money.format(value)}</strong></div>`;
+  }).join("")}</div>`;
+}
 
 function statementRows(object, totals = []) {
   return Object.entries(object).map(([key, value]) => {
@@ -33,6 +42,10 @@ function renderMain(data) {
   const managementProfit = 312000;
   const overstatement = managementProfit - pnl.netProfit;
   const currentLiabilities = bs.liabilities.suppliers + bs.liabilities.payroll + bs.liabilities.customerDeposits + bs.liabilities.interest + bs.liabilities.legalProvision;
+  const operatingExpenses = data.schedules.operatingExpenses;
+  const operatingExpenseRows = Object.entries(operatingExpenses)
+    .filter(([key]) => key !== "totalBeforeInterest")
+    .map(([key, value]) => `<tr><td>${esc(labelize(key))}</td><td>${money.format(value)}</td></tr>`).join("");
 
   document.querySelector("#app").innerHTML = `
     <div class="shell" id="top">
@@ -41,7 +54,7 @@ function renderMain(data) {
         <div class="case-meta"><strong>Case ${esc(data.caseId)}</strong><span>Prepared for ${esc(data.student.name)}</span><br><span>${esc(data.certification.status)}</span></div>
       </section>
       <section class="kpis" aria-label="Key financial results">
-        <article class="kpi accent"><span class="label">Corrected profit</span><span class="value">${money.format(pnl.netProfit)}</span><span class="delta">Management claimed ${money.format(managementProfit)}</span></article>
+        <article class="kpi accent"><span class="label">Provisional corrected profit</span><span class="value">${money.format(pnl.netProfit)}</span><span class="delta">Management claimed ${money.format(managementProfit)}</span></article>
         <article class="kpi"><span class="label">Closing cash</span><span class="value">${money.format(cf.closingCash)}</span><span class="delta">${money.format(currentLiabilities)} current obligations</span></article>
         <article class="kpi"><span class="label">Total assets</span><span class="value">${money.format(bs.assets.total)}</span><span class="delta">Balance sheet reconciled</span></article>
         <article class="kpi"><span class="label">Total liabilities</span><span class="value">${money.format(bs.liabilities.total)}</span><span class="delta">${number.format(bs.liabilities.total / bs.equity.closingEquity)}× closing equity</span></article>
@@ -52,7 +65,7 @@ function renderMain(data) {
     <section class="section" id="statements"><div class="shell">
       <div class="section-head"><div><div class="eyebrow">Three statements</div><h2>One connected reconstruction</h2></div><p>Profit is separated from cash, customer deposits from revenue, owner spending from expenses, and borrowing from income.</p></div>
       <div class="grid-3">
-        <article class="panel"><h3>Profit and loss</h3><table class="statement"><tbody>${statementRows(pnl, ["grossProfit", "operatingProfit", "netProfit"])}</tbody></table></article>
+        <article class="panel pnl-panel"><h3>Profit and loss</h3><table class="statement"><tbody>${statementRows(pnl, ["grossProfit", "operatingProfit", "netProfit"])}</tbody></table><div class="expense-breakdown"><h4>EUR 398,000 operating expense breakdown</h4><table class="statement"><tbody>${operatingExpenseRows}<tr class="total"><td>Total before interest</td><td>${money.format(operatingExpenses.totalBeforeInterest)}</td></tr></tbody></table></div></article>
         <article class="panel"><h3>Cash flow</h3><table class="statement"><tbody>${statementRows(cf, ["netOperatingCashFlow", "netInvestingCashFlow", "netFinancingCashFlow", "closingCash"])}</tbody></table></article>
         <article class="panel"><h3>Balance sheet</h3><table class="statement"><tbody>
           <tr><th colspan="2">Assets</th></tr>${statementRows(bs.assets, ["total"])}
@@ -126,9 +139,9 @@ function renderReview(data) {
         <article class="alert-card"><span class="label">Student overrides</span><strong>${overrides.length}</strong><span class="badge high">None recorded</span></article>
         <article class="alert-card"><span class="label">Low confidence</span><strong>${low.length}</strong><span class="badge low">Monthly payroll + insurance</span></article>
       </section>
-      <section class="section"><div class="section-head"><div><div class="eyebrow">Headline conclusion</div><h2>${money.format(data.statements.profitAndLoss.netProfit)} corrected profit</h2></div><p>${esc(data.boardRecommendation.decision)}</p></div><div class="grid-3"><article class="panel"><h3>Cash</h3><p class="positive">${money.format(data.statements.cashFlow.closingCash)}</p><p>Closing bank balance confirmed externally.</p></article><article class="panel"><h3>Balance sheet</h3><p class="positive">${money.format(data.statements.balanceSheet.assets.total)}</p><p>Assets equal liabilities and equity.</p></article><article class="panel callout"><h3>Management claim</h3><p class="negative">${money.format(312000)}</p><p>Rejected for valuation and earn-out purposes.</p></article></div></section>
+      <section class="section"><div class="section-head"><div><div class="eyebrow">Headline conclusion</div><h2>${money.format(data.statements.profitAndLoss.netProfit)} provisional corrected profit</h2></div><p>${esc(data.boardRecommendation.decision)}</p></div><div class="grid-3"><article class="panel"><h3>Cash</h3><p class="positive">${money.format(data.statements.cashFlow.closingCash)}</p><p>Closing bank balance confirmed externally.</p></article><article class="panel"><h3>Balance sheet</h3><p class="positive">${money.format(data.statements.balanceSheet.assets.total)}</p><p>Assets equal liabilities and equity.</p></article><article class="panel callout"><h3>Management claim</h3><p class="negative">${money.format(312000)}</p><p>Rejected for valuation and earn-out purposes.</p></article></div></section>
       <section class="section"><div class="section-head"><div><div class="eyebrow">Priority exceptions</div><h2>Unresolved and low-confidence items</h2></div><p>These items require focused reviewer attention before final student certification.</p></div><div class="grid-2">${data.uncertainties.map(item => `<article class="panel callout"><h3>${esc(item.item)}</h3><p>${esc(item.impact)}</p>${item.range ? `<span class="badge medium">${money.format(item.range[0])}–${money.format(item.range[1])}</span>` : `<span class="badge low">Evidence gap</span>`}</article>`).join("")}</div></section>
-      <section class="section"><div class="section-head"><div><div class="eyebrow">AI review trail</div><h2>25 material judgments</h2></div><p>First proposal, independent challenge and certified reasoning are retained for every material item.</p></div><div class="trail">${material.map(item => `<article class="trail-item" id="${esc(item.id)}"><header><span class="decision-id">${esc(item.id)}</span><h3>${esc(item.question)}</h3><span class="badge ${esc(item.confidence)}">${esc(item.confidence)}</span>${disagreementIds.has(item.id) ? `<span class="badge medium">agent disagreement</span>` : ""}${sharedExceptionIds.has(item.id) ? `<span class="badge medium">shared exception</span>` : ""}${item.changedFromAI ? `<span class="badge low">student override</span>` : ""}</header><div class="trail-columns"><div><small>Agent 1 proposal</small><p>${esc(item.aiProposal)}</p></div><div><small>Independent Agent 2</small><p>${esc(item.independentChallenge)}</p></div><div><small>Final certification</small><p><strong>${esc(item.answer)}</strong></p><p>${esc(item.studentReasoning)}</p></div></div><p><small>Evidence: ${item.evidence.map(ev => esc(ev)).join(" · ")}</small></p></article>`).join("")}</div></section>
+      <section class="section"><div class="section-head"><div><div class="eyebrow">AI review trail</div><h2>25 material judgments</h2></div><p>First proposal, independent challenge, evidence-based certification and quantified statement effects are retained for every material item.</p></div><div class="trail">${material.map(item => `<article class="trail-item" id="${esc(item.id)}"><header><span class="decision-id">${esc(item.id)}</span><h3>${esc(item.question)}</h3><span class="badge ${esc(item.confidence)}">${esc(item.confidence)}</span>${disagreementIds.has(item.id) ? `<span class="badge medium">agent disagreement</span>` : ""}${sharedExceptionIds.has(item.id) ? `<span class="badge medium">shared exception</span>` : ""}${item.changedFromAI ? `<span class="badge low">student override</span>` : ""}</header><div class="trail-columns"><div><small>Agent 1 proposal</small><p>${esc(item.aiProposal)}</p></div><div><small>Independent Agent 2</small><p>${esc(item.independentChallenge)}</p></div><div><small>Final certification and evidence basis</small><p><strong>${esc(item.answer)}</strong></p><p>${esc(item.studentReasoning)}</p></div></div><div class="effect-panel"><small>Quantified statement effect</small>${statementEffect(item.statementEffect)}<p>${esc(item.statementEffectBasis)}</p></div><p><small>Evidence: ${item.evidence.map(ev => esc(ev)).join(" · ")}</small></p></article>`).join("")}</div></section>
     </div>`;
 }
 

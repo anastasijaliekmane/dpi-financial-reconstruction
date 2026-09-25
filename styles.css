@@ -82,6 +82,9 @@ h1 { margin: 9px 0 12px; font-size: clamp(2.25rem, 5vw, 5.4rem); line-height: .9
 .statement .total td { color: var(--teal); font-weight: 800; border-top: 1px solid var(--teal); }
 .negative { color: var(--coral); }
 .positive { color: var(--ok); }
+.neutral { color: var(--muted); }
+.expense-breakdown { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.expense-breakdown h4 { margin: 0 0 8px; color: var(--teal); font-size: .86rem; letter-spacing: .05em; text-transform: uppercase; }
 
 .controls { display: grid; grid-template-columns: minmax(220px, 1fr) 180px 180px; gap: 10px; margin-bottom: 14px; }
 .controls input, .controls select { width: 100%; color: var(--ink); background: #0c1519; border: 1px solid var(--line); padding: 10px 12px; border-radius: 8px; }
@@ -126,6 +129,14 @@ h1 { margin: 9px 0 12px; font-size: clamp(2.25rem, 5vw, 5.4rem); line-height: .9
 .trail-columns div { padding: 12px; background: #0d171a; border: 1px solid #203138; }
 .trail-columns small { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 .trail-columns p { margin: 7px 0 0; color: #d7e0e1; }
+.effect-panel { margin-top: 12px; padding: 14px; background: #0d171a; border: 1px solid #203138; }
+.effect-panel > small { color: var(--teal); text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+.effect-panel > p { margin: 10px 0 0; color: var(--muted); font-size: .86rem; }
+.effect-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 10px; }
+.effect-grid div { min-width: 0; padding: 10px; background: var(--panel); border: 1px solid var(--line); }
+.effect-grid small, .effect-grid strong { display: block; }
+.effect-grid small { color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.effect-grid strong { margin-top: 4px; font-size: 1rem; font-variant-numeric: tabular-nums; }
 
 .footer { padding: 36px 0 54px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 36px; }
 .footer .shell { display: flex; justify-content: space-between; gap: 20px; }
@@ -137,6 +148,7 @@ h1 { margin: 9px 0 12px; font-size: clamp(2.25rem, 5vw, 5.4rem); line-height: .9
   .evidence-list, .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .alert-grid { grid-template-columns: repeat(2, 1fr); }
   .trail-columns { grid-template-columns: 1fr; }
+  .effect-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 760px) {
   .shell { width: min(100% - 22px, 1480px); }
@@ -148,6 +160,7 @@ h1 { margin: 9px 0 12px; font-size: clamp(2.25rem, 5vw, 5.4rem); line-height: .9
   .evidence-list, .checks { grid-template-columns: 1fr; }
   .controls { grid-template-columns: 1fr; }
   .section-head, .review-hero, .footer .shell { align-items: flex-start; flex-direction: column; }
+  .effect-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 460px) {
   .kpis, .alert-grid { grid-template-columns: 1fr; }

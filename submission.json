@@ -582,15 +582,16 @@
       "confidence": "high",
       "aiProposal": "Defer both deposits until the September events are delivered.",
       "independentChallenge": "Independent review confirmed delivery occurs after 31 August; cash receipt alone does not satisfy revenue recognition.",
-      "studentReasoning": "The contracts and CRM show September delivery dates. Cash increases, but an equal liability is recognized.",
+      "studentReasoning": "The signed contracts and CRM both place the New Beginnings and Fresh Freedom events in September, while the bank shows EUR 60,000 and EUR 30,000 received before delivery. Because no promised service was performed by 31 August, the EUR 90,000 is cash received against a contract liability, not revenue.",
       "statementEffect": {
-        "profit": -90000,
-        "cash": 0,
-        "assets": 0,
+        "profit": 0,
+        "cash": 90000,
+        "assets": 90000,
         "liabilities": 90000,
-        "equity": -90000
+        "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D042",
@@ -605,15 +606,16 @@
       "confidence": "high",
       "aiProposal": "Record the advance as borrowing.",
       "independentChallenge": "Independent review traced the receipt to the signed facility and rejected management's 'strategic income' label.",
-      "studentReasoning": "The agreement requires repayment, so the receipt creates debt and does not increase profit.",
+      "studentReasoning": "The signed facility requires repayment and the EUR 50,000 bank receipt matches the loan advance. The evidence therefore supports borrowing rather than income: cash and total assets rise by EUR 50,000, with an equal loan liability and no profit or equity effect.",
       "statementEffect": {
-        "profit": -50000,
-        "cash": 0,
-        "assets": 0,
+        "profit": 0,
+        "cash": 50000,
+        "assets": 50000,
         "liabilities": 50000,
-        "equity": -50000
+        "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D043",
@@ -628,15 +630,16 @@
       "confidence": "high",
       "aiProposal": "Recognize PPE from 10 May and depreciate from availability for use.",
       "independentChallenge": "Independent review checked the invoice and installation date; it is a new long-term resource rather than a repair.",
-      "studentReasoning": "The machine creates future economic benefit and was installed and available for use on 10 May.",
+      "studentReasoning": "The Pack-O-Matic supplier invoice identifies a EUR 60,000 machine, and the asset record confirms installation and availability for use on 10 May. It is a reusable production resource, so the payment exchanges EUR 60,000 of cash for EUR 60,000 of PPE; total assets and profit are unchanged before depreciation.",
       "statementEffect": {
         "profit": 0,
-        "cash": 0,
-        "assets": 60000,
+        "cash": -60000,
+        "assets": 0,
         "liabilities": 0,
         "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D044",
@@ -651,15 +654,16 @@
       "confidence": "high",
       "aiProposal": "Recognize the booth as equipment from 10 May.",
       "independentChallenge": "Independent review rejected management's marketing-expense label because the booth is a reusable long-term asset.",
-      "studentReasoning": "The asset was available for use and supports multiple events beyond the current period.",
+      "studentReasoning": "The EUR 20,000 invoice and asset record identify a reusable photo booth available for use from 10 May, rather than a one-period advertising service. The purchase reduces cash by EUR 20,000 and creates EUR 20,000 of PPE, leaving total assets, profit and equity unchanged before depreciation.",
       "statementEffect": {
-        "profit": 20000,
-        "cash": 0,
-        "assets": 20000,
+        "profit": 0,
+        "cash": -20000,
+        "assets": 0,
         "liabilities": 0,
-        "equity": 20000
+        "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D045",
@@ -674,15 +678,16 @@
       "confidence": "high",
       "aiProposal": "Treat the work as a repair.",
       "independentChallenge": "Independent review confirmed the work only restored normal output and did not extend useful life or capacity.",
-      "studentReasoning": "Restoration of normal operating condition does not meet the capitalization threshold.",
+      "studentReasoning": "The supplier evidence describes a replacement belt, cleaning and calibration that restored normal output without adding capacity or useful life; the bank records the EUR 10,000 payment. The cost is therefore an expense: profit, cash, total assets and equity each fall by EUR 10,000.",
       "statementEffect": {
         "profit": -10000,
-        "cash": 0,
+        "cash": -10000,
         "assets": -10000,
         "liabilities": 0,
         "equity": -10000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D046",
@@ -697,15 +702,16 @@
       "confidence": "high",
       "aiProposal": "Remove the villa payment from marketing and charge equity.",
       "independentChallenge": "Independent review confirmed the villa is personally owned and no customer meeting occurred.",
-      "studentReasoning": "The payment has no demonstrated business purpose and therefore represents value transferred to the owner.",
+      "studentReasoning": "The bank traces EUR 70,000 to a villa deposit, while the owner/legal evidence confirms the property is personal and the messages provide no genuine customer meeting or business purpose. It is an owner distribution: profit is unaffected, but cash and total assets fall by EUR 70,000 and equity falls by EUR 70,000.",
       "statementEffect": {
-        "profit": 70000,
-        "cash": 0,
-        "assets": 0,
+        "profit": 0,
+        "cash": -70000,
+        "assets": -70000,
         "liabilities": 0,
-        "equity": 70000
+        "equity": -70000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D047",
@@ -720,15 +726,16 @@
       "confidence": "high",
       "aiProposal": "Remove unsupported owner-card spending from payroll and charge equity.",
       "independentChallenge": "Independent review found no employment approval or business evidence supporting an expense classification.",
-      "studentReasoning": "Personal owner spending reduces equity and is not remuneration or operating expense without valid approval and business purpose.",
+      "studentReasoning": "The bank and owner-card records support EUR 40,000 of personal spending, with no approved remuneration arrangement, invoices or business purpose. It is an owner distribution: profit is unaffected, while cash and total assets fall by EUR 40,000 and equity falls by EUR 40,000.",
       "statementEffect": {
-        "profit": 40000,
-        "cash": 0,
-        "assets": 0,
+        "profit": 0,
+        "cash": -40000,
+        "assets": -40000,
         "liabilities": 0,
-        "equity": 40000
+        "equity": -40000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D048",
@@ -742,7 +749,7 @@
       "confidence": "medium",
       "aiProposal": "Use the warehouse-supported consumption figure for delivered sales.",
       "independentChallenge": "Independent review confirmed the stated consumption amount but identified a separate EUR 9,000 conflict with the saleable physical-count value.",
-      "studentReasoning": "The warehouse evidence directly links EUR 405,000 to valid delivered sales; the related inventory mismatch remains disclosed rather than hidden.",
+      "studentReasoning": "The warehouse record explicitly attributes EUR 405,000 of materials to valid delivered sales and separately identifies the damaged stock. Recognizing consumption transfers EUR 405,000 from inventory to cost of sales, reducing profit, total assets and equity by EUR 405,000; the separate EUR 9,000 count conflict remains disclosed.",
       "statementEffect": {
         "profit": -405000,
         "cash": 0,
@@ -750,7 +757,8 @@
         "liabilities": 0,
         "equity": -405000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D049",
@@ -764,15 +772,16 @@
       "confidence": "high",
       "aiProposal": "Treat event staff as direct service cost.",
       "independentChallenge": "Independent review confirmed these employees worked directly on paid events, despite management's admin label.",
-      "studentReasoning": "Direct labor required to deliver contracted events belongs in cost of sales.",
+      "studentReasoning": "The payroll schedule identifies EUR 80,000 of employees who worked directly on delivered events, so the amount belongs in service cost of sales rather than administration. This classification reduces gross profit by EUR 80,000 and increases operating profit before administrative payroll by the same amount; total net profit, cash, assets, liabilities and equity are unchanged by the reclassification.",
       "statementEffect": {
-        "profit": -80000,
+        "profit": 0,
         "cash": 0,
         "assets": 0,
-        "liabilities": 80000,
-        "equity": -80000
+        "liabilities": 0,
+        "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D050",
@@ -852,7 +861,7 @@
       "confidence": "medium",
       "aiProposal": "Use the independent schedule estimate and update accumulated depreciation.",
       "independentChallenge": "Independent review noted detailed useful lives are not supplied but accepted EUR 24,000 as the only supported schedule estimate.",
-      "studentReasoning": "Existing and new equipment were in use during the period; omitting depreciation overstates assets and profit.",
+      "studentReasoning": "The asset schedule confirms opening equipment and EUR 80,000 of additions were in use during the period and supplies the only supported EUR 24,000 allocation. Recognizing depreciation reduces profit, PPE within total assets and equity by EUR 24,000, with no cash or liability effect.",
       "statementEffect": {
         "profit": -24000,
         "cash": 0,
@@ -860,7 +869,8 @@
         "liabilities": 0,
         "equity": -24000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D057",
@@ -875,7 +885,7 @@
       "confidence": "high",
       "aiProposal": "Recognize a full impairment at 31 August.",
       "independentChallenge": "Independent review confirmed the September liquidator notice provides adjusting evidence of the customer's condition at reporting date.",
-      "studentReasoning": "No recovery is expected and the later notice confirms an existing condition.",
+      "studentReasoning": "The customer file records the EUR 18,000 R-17 receivable, and the post-period liquidator notice confirms the customer was already insolvent at 31 August with no expected distribution. The adjusting write-off reduces profit, receivables within total assets and equity by EUR 18,000, with no cash effect.",
       "statementEffect": {
         "profit": -18000,
         "cash": 0,
@@ -883,7 +893,8 @@
         "liabilities": 0,
         "equity": -18000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D058",
@@ -898,7 +909,7 @@
       "confidence": "high",
       "aiProposal": "Reduce the basement stock carrying amount to zero.",
       "independentChallenge": "Independent review distinguished physical existence from recoverable value and confirmed the stock is unsaleable.",
-      "studentReasoning": "The goods have no saleable value; the separate EUR 2,000 disposal quote remains a disclosed cash uncertainty.",
+      "studentReasoning": "The warehouse count identifies EUR 22,000 of water-damaged stock, and the later evidence confirms it is unsaleable. Writing its recoverable value to zero reduces profit, inventory within total assets and equity by EUR 22,000; the separate EUR 2,000 disposal quote is a future cash uncertainty.",
       "statementEffect": {
         "profit": -22000,
         "cash": 0,
@@ -906,7 +917,8 @@
         "liabilities": 0,
         "equity": -22000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D059",
@@ -921,7 +933,7 @@
       "confidence": "high",
       "aiProposal": "Book counsel's best estimate at reporting date.",
       "independentChallenge": "Independent review confirmed the claim was probable at 31 August and the estimate falls within the EUR 20,000-EUR 30,000 range.",
-      "studentReasoning": "A probable present obligation with a reliable best estimate meets the recognition test.",
+      "studentReasoning": "The legal correspondence shows a present employee claim arising before 31 August, external counsel assesses loss as probable, and the supported range is EUR 20,000-EUR 30,000. Recognizing the EUR 25,000 best estimate reduces profit and equity by EUR 25,000 and increases liabilities by EUR 25,000, with no current cash effect.",
       "statementEffect": {
         "profit": -25000,
         "cash": 0,
@@ -929,7 +941,8 @@
         "liabilities": 25000,
         "equity": -25000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D060",
@@ -992,15 +1005,16 @@
       "confidence": "high",
       "aiProposal": "Recognize the signed and accepted February delivery.",
       "independentChallenge": "Independent review matched contract, CRM and full bank collection despite name variations.",
-      "studentReasoning": "Acceptance and delivery occurred before period end and the evidence triangulates across independent sources.",
+      "studentReasoning": "The signed contract, CRM delivery record and full EUR 180,000 bank collection all match the NorthStar transaction despite the abbreviated bank name. Delivery and acceptance occurred in February, so revenue, cash, total assets, profit and equity each increase by EUR 180,000.",
       "statementEffect": {
         "profit": 180000,
-        "cash": 0,
+        "cash": 180000,
         "assets": 180000,
         "liabilities": 0,
         "equity": 180000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D065",
@@ -1016,15 +1030,16 @@
       "confidence": "high",
       "aiProposal": "Recognize the accepted March delivery and retain EUR 58,000 receivable.",
       "independentChallenge": "Independent review confirmed partial collection does not limit revenue once delivery is accepted.",
-      "studentReasoning": "The performance obligation was satisfied on 18 March; cash timing affects receivables, not revenue.",
+      "studentReasoning": "The signed contract and CRM confirm acceptance on 18 March for EUR 200,000, while the bank supports EUR 142,000 collected and EUR 58,000 outstanding. Revenue and profit rise by EUR 200,000; cash rises by EUR 142,000, receivables by EUR 58,000, and total assets and equity by EUR 200,000.",
       "statementEffect": {
         "profit": 200000,
-        "cash": 0,
+        "cash": 142000,
         "assets": 200000,
         "liabilities": 0,
         "equity": 200000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D066",
@@ -1040,15 +1055,16 @@
       "confidence": "high",
       "aiProposal": "Recognize revenue on completion and customer email acceptance.",
       "independentChallenge": "Independent review assessed the email acceptance and bank match and found sufficient evidence of completion.",
-      "studentReasoning": "The event was completed on 29 April and the customer accepted delivery.",
+      "studentReasoning": "The event record and customer acceptance confirm completion on 29 April for EUR 100,000, and the bank supports EUR 70,000 collected. Revenue and profit rise by EUR 100,000; cash rises by EUR 70,000, receivables by EUR 30,000, and total assets and equity by EUR 100,000.",
       "statementEffect": {
         "profit": 100000,
-        "cash": 0,
+        "cash": 70000,
         "assets": 100000,
         "liabilities": 0,
         "equity": 100000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D067",
@@ -1064,15 +1080,16 @@
       "confidence": "high",
       "aiProposal": "Recognize the June mixed-order delivery and retain EUR 25,000 receivable.",
       "independentChallenge": "Independent review confirmed delivery and the customer's full acceptance message.",
-      "studentReasoning": "The goods were delivered and accepted before period end.",
+      "studentReasoning": "The contract, CRM and customer message confirm the EUR 120,000 Liberty order was delivered and accepted on 20 June, while the bank supports EUR 95,000 collected. Revenue and profit rise by EUR 120,000; cash rises by EUR 95,000, receivables by EUR 25,000, and total assets and equity by EUR 120,000.",
       "statementEffect": {
         "profit": 120000,
-        "cash": 0,
+        "cash": 95000,
         "assets": 120000,
         "liabilities": 0,
         "equity": 120000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D068",
@@ -1087,15 +1104,16 @@
       "confidence": "high",
       "aiProposal": "Defer revenue until September delivery.",
       "independentChallenge": "Independent review confirmed both delivery dates occur after the reporting date and found no August performance.",
-      "studentReasoning": "Receiving deposits does not satisfy the promised event services.",
+      "studentReasoning": "The contracts and CRM show both EUR 90,000 of events are scheduled after 31 August and no August delivery evidence exists. The deposits increase cash and total assets by EUR 90,000 and create a EUR 90,000 contract liability; profit and equity remain unchanged until performance.",
       "statementEffect": {
-        "profit": -90000,
-        "cash": 0,
-        "assets": 0,
+        "profit": 0,
+        "cash": 90000,
+        "assets": 90000,
         "liabilities": 90000,
-        "equity": -90000
+        "equity": 0
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D069",
@@ -1135,7 +1153,7 @@
       "confidence": "high",
       "aiProposal": "Use the liquidator notice to write off R-17 completely.",
       "independentChallenge": "Independent review confirmed zero expected distribution and treated the notice as adjusting evidence.",
-      "studentReasoning": "The customer was already insolvent at reporting date and no recovery is expected.",
+      "studentReasoning": "The EUR 18,000 R-17 balance is supported by the customer records, and the liquidator notice confirms the reporting-date insolvency and zero expected recovery. The full write-off reduces profit, receivables within total assets and equity by EUR 18,000, with no cash or liability effect.",
       "statementEffect": {
         "profit": -18000,
         "cash": 0,
@@ -1143,7 +1161,8 @@
         "liabilities": 0,
         "equity": -18000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D072",
@@ -1158,7 +1177,7 @@
       "confidence": "high",
       "aiProposal": "Write carrying value down to zero.",
       "independentChallenge": "Independent review confirmed unsaleability; the EUR 2,000 removal quote is separate from carrying value.",
-      "studentReasoning": "Recoverable value is nil even though the goods remain physically present.",
+      "studentReasoning": "The warehouse evidence fixes the damaged stock's carrying amount at EUR 22,000 and confirms it cannot be sold; later evidence corroborates nil recoverable value. The estimate reduces profit, inventory within total assets and equity by EUR 22,000, with no current cash or liability effect.",
       "statementEffect": {
         "profit": -22000,
         "cash": 0,
@@ -1166,7 +1185,8 @@
         "liabilities": 0,
         "equity": -22000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D073",
@@ -1181,7 +1201,7 @@
       "confidence": "high",
       "aiProposal": "Recognize counsel's best estimate.",
       "independentChallenge": "Independent review confirmed probability and measurement at reporting date using external legal evidence.",
-      "studentReasoning": "EUR 25,000 is the best estimate within the supported range.",
+      "studentReasoning": "External counsel confirms the obligation existed at 31 August, assesses loss as probable and supplies a EUR 20,000-EUR 30,000 range; EUR 25,000 is the neutral midpoint and best estimate. Recognition reduces profit and equity by EUR 25,000 and increases liabilities by EUR 25,000, with no current cash or asset effect.",
       "statementEffect": {
         "profit": -25000,
         "cash": 0,
@@ -1189,7 +1209,8 @@
         "liabilities": 25000,
         "equity": -25000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D074",
@@ -1203,7 +1224,7 @@
       "confidence": "medium",
       "aiProposal": "Adopt the independent schedule estimate.",
       "independentChallenge": "Independent review accepted the estimate but rated it medium confidence because component lives and residual values are not supplied.",
-      "studentReasoning": "The estimate is the only supported allocation for equipment used during the period.",
+      "studentReasoning": "The asset schedule shows the equipment in service and provides the only supported period allocation, although detailed component lives are unavailable. The EUR 24,000 estimate reduces profit, PPE within total assets and equity by EUR 24,000, with no cash or liability effect.",
       "statementEffect": {
         "profit": -24000,
         "cash": 0,
@@ -1211,7 +1232,8 @@
         "liabilities": 0,
         "equity": -24000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D075",
@@ -1226,15 +1248,16 @@
       "confidence": "medium",
       "aiProposal": "Use the roll-forward: opening EUR 80,000 + purchases EUR 459,000 - consumed EUR 405,000 - write-off EUR 22,000.",
       "independentChallenge": "Independent review found that the physical count supports EUR 121,000 of saleable stock; using it would raise profit, assets and equity by EUR 9,000 and requires a cut-off or consumption correction.",
-      "studentReasoning": "The base case preserves the documented roll-forward and stated consumption figure. The physical-count contradiction remains visible pending an SKU recount and purchase cut-off test.",
+      "studentReasoning": "The documented roll-forward gives EUR 112,000: opening EUR 80,000 plus purchases EUR 459,000 less EUR 405,000 consumed and EUR 22,000 written off. The physical count instead supports EUR 121,000 of saleable stock; selecting the supported base case is EUR 9,000 lower than that alternative, reducing profit, total assets and equity by EUR 9,000 pending an SKU recount and cut-off test.",
       "statementEffect": {
-        "profit": -427000,
+        "profit": -9000,
         "cash": 0,
-        "assets": 112000,
+        "assets": -9000,
         "liabilities": 0,
-        "equity": -427000
+        "equity": -9000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D076",
@@ -1432,15 +1455,16 @@
       "confidence": "high",
       "aiProposal": "Reject the management P&L and adopt the reconciled EUR 65,000 result.",
       "independentChallenge": "Independent review traced management's EUR 312,000 claim to premature revenue, loan income, omitted expenses and owner-spend misclassification.",
-      "studentReasoning": "Valuation must use accounts supported by bank, contracts and third-party evidence.",
+      "studentReasoning": "The management P&L is contradicted by the bank, contracts and third-party evidence: it includes EUR 90,000 of undelivered-event revenue and EUR 50,000 of borrowing as income and omits supported costs and provisions. Using the reconciled accounts reduces reported profit and equity by EUR 247,000 versus the EUR 312,000 claim; the approval decision itself does not move cash, assets or liabilities.",
       "statementEffect": {
         "profit": -247000,
-        "cash": -126000,
+        "cash": 0,
         "assets": 0,
         "liabilities": 0,
         "equity": -247000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     },
     {
       "id": "D092",
@@ -1555,7 +1579,7 @@
       "confidence": "high",
       "aiProposal": "Use corrected EUR 65,000 profit, subject to final board approval and uncertainty disclosures.",
       "independentChallenge": "Independent review independently reconstructed the statements and confirmed the management number is unsupported.",
-      "studentReasoning": "The claimed figure includes EUR 90,000 premature revenue and EUR 50,000 loan income while omitting material expenses and provisions.",
+      "studentReasoning": "The earn-out must use the evidence-based EUR 65,000 provisional corrected profit rather than management's EUR 312,000 claim. The EUR 247,000 difference is supported by reversing premature revenue and loan income and recognizing omitted expenses and provisions; the valuation choice changes the profit and equity basis by EUR 247,000 but does not itself post cash, asset or liability entries.",
       "statementEffect": {
         "profit": -247000,
         "cash": 0,
@@ -1563,7 +1587,8 @@
         "liabilities": 0,
         "equity": -247000
       },
-      "changedFromAI": false
+      "changedFromAI": false,
+      "statementEffectBasis": "Effect of the accepted accounting treatment on the reported statements; cash is included within total assets."
     }
   ],
   "schedules": {
